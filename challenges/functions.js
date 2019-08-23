@@ -40,7 +40,9 @@ console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice t
 
 // Explain in your own words why nestedfunction can access the variable internal.
 
-// Explanation: 
+// Explanation: nestedFunction and internal are both inside of myFunction. They're on the same
+// level and internal was declared before nestedfunction was, so its able to use it. If
+// nestedFunction was outside, in the global scope, it wouldn't be able to access internal.
 
 
 const external = "I'm outside the function";
@@ -51,7 +53,11 @@ function myFunction() {
 
   function nestedFunction() {
     console.log(internal);
+
+  // const internal = "Hello! I'm inside myFunction!";    // testing hoisting (doesn't work)
   };
+  // const internal = "Hello! I'm inside myFunction!";    // testing hoisting and function level (works)
   nestedFunction();
 }
+// const internal = "Hello! I'm inside myFunction!";      // testing global (works)
 myFunction();
