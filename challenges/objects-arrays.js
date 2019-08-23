@@ -147,7 +147,14 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = [];
+let lowCaseAnimalNames = [];
+
+lowCaseAnimalNames = zooAnimals.map(function(animal) {
+  // console.log(lowCaseAnimalNames); //test
+  lowCaseAnimalNames = animal.animal_name.toLowerCase();
+  return lowCaseAnimalNames;
+})
+
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
